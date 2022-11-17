@@ -19,9 +19,6 @@ class StateMachine(object):
                 if transition.message == message and transition.state == self.state:
                     self.state = transition.next_state
                     successful_transitions.append(transition)
-                elif message == "Message E1" or message == "Message E2" or message == "Message E3" or message == "Message E4":
-                    self.state = transition.next_state
-                    successful_transitions.append(transition)
         # print("Transitioned to state: " + str(self.state.name), ", Successful transitions: " + str([st.message for st in successful_transitions]))
         # print()
         return successful_transitions
@@ -102,10 +99,10 @@ transition3 = Transition(state3, "Message 3", state4)
 #transition4 = Transition(state3, "Message 4", state4)
 
 #emergency transitions
-transitionE1 = Transition(state1, "Message E1", stateE)
-transitionE2 = Transition(state2, "Message E2", stateE)
-transitionE3 = Transition(state3, "Message E3", stateE)
-transitionE4 = Transition(state4, "Message E4", stateE)
+transitionE1 = Transition(state1, "Message E", stateE)
+transitionE2 = Transition(state2, "Message E", stateE)
+transitionE3 = Transition(state3, "Message E", stateE)
+transitionE4 = Transition(state4, "Message E", stateE)
 
 
 # Define the state machine
